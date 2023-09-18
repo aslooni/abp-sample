@@ -1,0 +1,11 @@
+﻿@using Microsoft.Extensions.Configuration
+@using Microsoft.Extensions.Options;
+@inject IOptions<Baharan.Web.Core.GoogleCaptchaConfig> GoogleCaptchaConfig
+<script src="https://www.google.com/recaptcha/api.js?render=@GoogleCaptchaConfig.Value.SiteKey"></script>
+<script>
+    grecaptcha.ready(function () {
+        grecaptcha.execute('@GoogleCaptchaConfig.Value.SiteKey', { action: 'submit' }).then(function (token) {
+            document.getElementById("RecaptchaToken").value = token;
+        });
+    });
+</script>

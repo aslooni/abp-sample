@@ -1,0 +1,33 @@
+﻿@page
+@using Baharan.Localization;
+@using Baharan.Permissions;
+@using Microsoft.AspNetCore.Authorization;
+@using Microsoft.Extensions.Localization;
+@model Baharan.Web.Pages.Personnels.IndexModel
+@inject IAuthorizationService AuthorizationService
+@inject IStringLocalizer<BaharanResource> L
+@section scripts
+    {
+    <abp-script src="/Pages/Personnels/Index.js" />
+}
+<abp-card>
+    <abp-card-header>
+        <abp-row>
+            <abp-column size-md="_6">
+                <abp-card-title>@L["Personnels"]</abp-card-title>
+            </abp-column>
+            <abp-column size-md="_6" class="text-end">
+                @if (await AuthorizationService.IsGrantedAsync(BaharanPermissions.Personnels.Create))
+                {
+                    <abp-button id="NewPersonnelButton"
+                                text="@L["New p"].Value"
+                                icon="plus"
+                                button-type="Primary" />
+                }
+            </abp-column>
+        </abp-row>
+    </abp-card-header>
+    <abp-card-body>
+        <abp-table striped-rows="true" id="PersonnelsTable"></abp-table>
+    </abp-card-body>
+</abp-card>

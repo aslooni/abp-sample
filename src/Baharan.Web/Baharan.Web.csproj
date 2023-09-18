@@ -1,0 +1,71 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <Import Project="..\..\common.props" />
+
+  <PropertyGroup>
+    <TargetFramework>net7.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <RootNamespace>Baharan.Web</RootNamespace>
+    <AssetTargetFallback>$(AssetTargetFallback);portable-net45+win8+wp8+wpa81;</AssetTargetFallback>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <GenerateBindingRedirectsOutputType>true</GenerateBindingRedirectsOutputType>
+    <GenerateRuntimeConfigurationFiles>true</GenerateRuntimeConfigurationFiles>
+    <MvcRazorExcludeRefAssembliesFromPublish>false</MvcRazorExcludeRefAssembliesFromPublish>
+    <PreserveCompilationReferences>true</PreserveCompilationReferences>
+    <UserSecretsId>Baharan-4681b4fd-151f-4221-84a4-929d86723e4c</UserSecretsId>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="Logs\**" />
+    <Content Remove="Logs\**" />
+    <EmbeddedResource Remove="Logs\**" />
+    <None Remove="Logs\**" />
+    <Compile Remove="Pages\Documents\EditModal.cshtml.cs" />
+    <Content Remove="Pages\Components\GoogleReCaptcha\Default.cshtml" />
+    <Content Remove="Pages\Documents\EditModal.cshtml" />
+    <None Include="Pages\Components\GoogleReCaptcha\Default.cshtml" />
+    <None Include="Pages\Documents\CreateModal.cshtml" />
+    <None Include="Pages\Documents\Index.cshtml" />
+    <None Include="Pages\Personnels\CreateModal.cshtml" />
+    <None Include="Pages\Personnels\EditModal.cshtml" />
+    <None Include="Pages\Personnels\Index.cshtml" />
+  <ProjectReference Include="..\..\modules\Identity\src\Identity.Web\Identity.Web.csproj" /><ProjectReference Include="..\..\modules\Account\src\Account.Web\Account.Web.csproj" /></ItemGroup>
+
+  <ItemGroup>
+    <None Update="Pages\**\*.js">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="Pages\**\*.css">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Newtonsoft.Json" Version="9.0.1" />
+    <PackageReference Include="Serilog.AspNetCore" Version="5.0.0" />
+    <PackageReference Include="Serilog.Sinks.Async" Version="1.5.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Volo.Abp.AspNetCore.Mvc.UI.Theme.LeptonXLite" Version="2.3.*-*" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Baharan.Application\Baharan.Application.csproj" />
+    <ProjectReference Include="..\Baharan.HttpApi\Baharan.HttpApi.csproj" />
+    <ProjectReference Include="..\Baharan.EntityFrameworkCore\Baharan.EntityFrameworkCore.csproj" />
+    <PackageReference Include="Volo.Abp.Autofac" Version="7.3.2" />
+    <PackageReference Include="Volo.Abp.Swashbuckle" Version="7.3.2" />
+    <PackageReference Include="Volo.Abp.AspNetCore.Serilog" Version="7.3.2" />
+    <PackageReference Include="Volo.Abp.Identity.Web" Version="7.3.2" />
+    <PackageReference Include="Volo.Abp.Account.Web.OpenIddict" Version="7.3.2" />
+    <PackageReference Include="Volo.Abp.TenantManagement.Web" Version="7.3.2" />
+    <PackageReference Include="Volo.Abp.SettingManagement.Web" Version="7.3.2" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Pages\Experiences\" />
+    <Folder Include="wwwroot\host\documents\" />
+  </ItemGroup>
+
+</Project>

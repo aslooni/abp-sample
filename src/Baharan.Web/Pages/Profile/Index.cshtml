@@ -1,0 +1,89 @@
+﻿@page
+@using Baharan.Localization
+@using Baharan.Permissions;
+@using Microsoft.AspNetCore.Authorization;
+@using Microsoft.Extensions.Localization
+@using Volo.Abp.AspNetCore.Mvc.UI.Bootstrap.TagHelpers.Modal
+@model Baharan.Web.Pages.Profile.IndexModel
+@inject IStringLocalizer<BaharanResource> L
+@inject IAuthorizationService AuthorizationService
+@{
+    string editPersonel = string.Format(@"editPersonelFunction('{0}')", Model.Profile.Personnel.Id);
+    string createDocument = string.Format(@"createDocumentFunction('{0}')", Model.Profile.Personnel.Id);
+}
+@section scripts {
+    <abp-script src="/Pages/Profile/Index.js" />
+}
+<div class="card">
+    <div class="card-header">
+        Personal Infos
+    </div>
+    <div class="card-body">
+        <p class="card-text">
+            <dl class="dl-horizontal">
+                <dt>@nameof( Model.Profile.Personnel.FirstName)</dt>
+                <dd>@Model.Profile.Personnel.FirstName</dd>
+                <dt>@nameof( Model.Profile.Personnel.LastName)</dt>
+                <dd>@Model.Profile.Personnel.LastName</dd>
+                <dt>@nameof( Model.Profile.Personnel.NationalCode)</dt>
+                <dd>@Model.Profile.Personnel.NationalCode</dd>
+                <dt>@nameof( Model.Profile.Personnel.BirthDate)</dt>
+                <dd>@Model.Profile.Personnel.BirthDate</dd>
+            </dl>
+        </p>
+    </div>
+    <div class="card-footer">
+        @if (await AuthorizationService.IsGrantedAsync(BaharanPermissions.Personnels.Edit))
+        {
+            <abp-button id="EditPersonnelButton" class="btn-sm"
+                        text="@L["Edit"].Value"
+                        icon="edit"
+                        button-type="Primary" onclick=@editPersonel />
+        }
+    </div>
+</div>
+<div class="card">
+    <div class="card-header">
+        Personal Documents
+    </div>
+    <div class="card-body">
+        <p class="card-text">
+            NationalCart
+        </p>
+        @if (!string.IsNullOrEmpty(Model.Profile.Document.NationalCart))
+        {
+            <img src="@Model.Profile.Document.NationalCart" class="img-thumbnail" width="250" />
+        }
+        <p class="card-text">
+            BirthCertificate
+        </p>
+        @if (!string.IsNullOrEmpty(Model.Profile.Document.BirthCertificate))
+        {
+            <img src="@Model.Profile.Document.BirthCertificate" class="img-thumbnail" width="250" />
+        }
+    </div>
+    <div class="card-footer">
+        @if (await AuthorizationService.IsGrantedAsync(BaharanPermissions.Documents.Edit))
+        {
+            <abp-button id="NewDocumentButton" class="mt-2 btn-sm"
+                        text="@L["Edit"].Value"
+                        icon="edit"
+                        button-type="Primary" onclick=@createDocument />
+        }
+    </div>
+</div>
+<div class="card">
+    <div class="card-header">
+        Personal Experience
+    </div>
+    <div class="card-body">
+        @if (await AuthorizationService.IsGrantedAsync(BaharanPermissions.Experiences.Create))
+        {
+            <abp-button id="EditDocumentButton" class="mt-2 btn-sm"
+                        text="@L["Create"].Value"
+                        icon="plus"
+                        button-type="Primary" />
+        }
+        <abp-table striped-rows="true" id="ExperienceTable"></abp-table>
+    </div>
+</div>

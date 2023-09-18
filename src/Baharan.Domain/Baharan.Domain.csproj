@@ -1,0 +1,30 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <Import Project="..\..\common.props" />
+
+  <PropertyGroup>
+    <TargetFramework>net7.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <RootNamespace>Baharan</RootNamespace>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Baharan.Domain.Shared\Baharan.Domain.Shared.csproj" />
+  <ProjectReference Include="..\..\modules\Identity\src\Identity.Domain\Identity.Domain.csproj" /><ProjectReference Include="..\..\modules\Account\src\Account.Domain\Account.Domain.csproj" /></ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Volo.Abp.BlobStoring" Version="7.3.3" />
+    <PackageReference Include="Volo.Abp.BlobStoring.FileSystem" Version="7.3.3" />
+    <PackageReference Include="Volo.Abp.Emailing" Version="7.3.2" />
+    <PackageReference Include="Volo.Abp.Identity.Domain" Version="7.3.2" />
+    <PackageReference Include="Volo.Abp.PermissionManagement.Domain.Identity" Version="7.3.2" />
+    <PackageReference Include="Volo.Abp.BackgroundJobs.Domain" Version="7.3.2" />
+    <PackageReference Include="Volo.Abp.AuditLogging.Domain" Version="7.3.2" />
+    <PackageReference Include="Volo.Abp.TenantManagement.Domain" Version="7.3.2" />
+    <PackageReference Include="Volo.Abp.FeatureManagement.Domain" Version="7.3.2" />
+    <PackageReference Include="Volo.Abp.SettingManagement.Domain" Version="7.3.2" />
+    <PackageReference Include="Volo.Abp.OpenIddict.Domain" Version="7.3.2" />
+    <PackageReference Include="Volo.Abp.PermissionManagement.Domain.OpenIddict" Version="7.3.2" />
+  </ItemGroup>
+
+</Project>

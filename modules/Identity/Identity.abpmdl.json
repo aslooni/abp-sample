@@ -1,0 +1,111 @@
+{
+  "folders": {
+    "items": {
+      "src": {},
+      "test": {},
+      "host": {}
+    }
+  },
+  "packages": {
+    "Identity.Domain.Shared": {
+      "path": "src/Identity.Domain.Shared/Identity.Domain.Shared.abppkg.json",
+      "folder": "src"
+    },
+    "Identity.Domain": {
+      "path": "src/Identity.Domain/Identity.Domain.abppkg.json",
+      "folder": "src"
+    },
+    "Identity.Application.Contracts": {
+      "path": "src/Identity.Application.Contracts/Identity.Application.Contracts.abppkg.json",
+      "folder": "src"
+    },
+    "Identity.Application": {
+      "path": "src/Identity.Application/Identity.Application.abppkg.json",
+      "folder": "src"
+    },
+    "Identity.EntityFrameworkCore": {
+      "path": "src/Identity.EntityFrameworkCore/Identity.EntityFrameworkCore.abppkg.json",
+      "folder": "src"
+    },
+    "Identity.MongoDB": {
+      "path": "src/Identity.MongoDB/Identity.MongoDB.abppkg.json",
+      "folder": "src"
+    },
+    "Identity.HttpApi": {
+      "path": "src/Identity.HttpApi/Identity.HttpApi.abppkg.json",
+      "folder": "src"
+    },
+    "Identity.HttpApi.Client": {
+      "path": "src/Identity.HttpApi.Client/Identity.HttpApi.Client.abppkg.json",
+      "folder": "src"
+    },
+    "Identity.TestBase": {
+      "path": "test/Identity.TestBase/Identity.TestBase.abppkg.json",
+      "folder": "test"
+    },
+    "Identity.EntityFrameworkCore.Tests": {
+      "path": "test/Identity.EntityFrameworkCore.Tests/Identity.EntityFrameworkCore.Tests.abppkg.json",
+      "folder": "test"
+    },
+    "Identity.MongoDB.Tests": {
+      "path": "test/Identity.MongoDB.Tests/Identity.MongoDB.Tests.abppkg.json",
+      "folder": "test"
+    },
+    "Identity.Domain.Tests": {
+      "path": "test/Identity.Domain.Tests/Identity.Domain.Tests.abppkg.json",
+      "folder": "test"
+    },
+    "Identity.Application.Tests": {
+      "path": "test/Identity.Application.Tests/Identity.Application.Tests.abppkg.json",
+      "folder": "test"
+    },
+    "Identity.HttpApi.Host": {
+      "path": "host/Identity.HttpApi.Host/Identity.HttpApi.Host.abppkg.json",
+      "folder": "host"
+    },
+    "Identity.Web": {
+      "path": "src/Identity.Web/Identity.Web.abppkg.json",
+      "folder": "src"
+    },
+    "Identity.HttpApi.Client.ConsoleTestApp": {
+      "path": "test/Identity.HttpApi.Client.ConsoleTestApp/Identity.HttpApi.Client.ConsoleTestApp.abppkg.json",
+      "folder": "test"
+    },
+    "Identity.Web.Host": {
+      "path": "host/Identity.Web.Host/Identity.Web.Host.abppkg.json",
+      "folder": "host"
+    },
+    "Identity.AuthServer": {
+      "path": "host/Identity.AuthServer/Identity.AuthServer.abppkg.json",
+      "folder": "host"
+    },
+    "Identity.Host.Shared": {
+      "path": "host/Identity.Host.Shared/Identity.Host.Shared.abppkg.json",
+      "folder": "host"
+    },
+    "Identity.Web.Unified": {
+      "path": "host/Identity.Web.Unified/Identity.Web.Unified.abppkg.json",
+      "folder": "host"
+    },
+    "Identity.Blazor": {
+      "path": "src/Identity.Blazor/Identity.Blazor.abppkg.json",
+      "folder": "src"
+    },
+    "Identity.Blazor.Host": {
+      "path": "host/Identity.Blazor.Host/Identity.Blazor.Host.abppkg.json",
+      "folder": "host"
+    },
+    "Identity.Blazor.Server": {
+      "path": "src/Identity.Blazor.Server/Identity.Blazor.Server.abppkg.json",
+      "folder": "src"
+    },
+    "Identity.Blazor.WebAssembly": {
+      "path": "src/Identity.Blazor.WebAssembly/Identity.Blazor.WebAssembly.abppkg.json",
+      "folder": "src"
+    },
+    "Identity.Blazor.Server.Host": {
+      "path": "host/Identity.Blazor.Server.Host/Identity.Blazor.Server.Host.abppkg.json",
+      "folder": "host"
+    }
+  }
+}

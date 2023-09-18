@@ -1,0 +1,28 @@
+﻿@page
+@using Microsoft.AspNetCore.Mvc.Localization
+@using Volo.Abp.Account.Localization
+@model Baharan.Web.Pages.Account.CustomRegisterModel
+@inject IHtmlLocalizer<AccountResource> L
+@inject Volo.Abp.AspNetCore.Mvc.UI.Layout.IPageLayout PageLayout
+@{
+    PageLayout.Content.Title = L["Register"].Value;
+}
+<div class="card mt-3 shadow-sm rounded">
+    <div class="card-body p-5">
+        <h4>Register</h4>
+        <strong>
+            Already registered?
+            <a href="/Account/Login" class="text-decoration-none">Login</a>
+        </strong>
+        <form method="post">
+            <input type="hidden" asp-for="RecaptchaToken" id="RecaptchaToken" />
+            <abp-input asp-for="Input.UserName" required-symbol="false" />
+            <abp-input asp-for="Input.EmailAddress" required-symbol="false" />
+            <abp-input asp-for="Input.Password" required-symbol="false" />
+            <div class="d-grid gap-2">
+                <abp-button button-type="Primary" type="submit" class="btn-lg mt-4 btn btn-primary" data-busy-text="Processing...">@L["Register"]</abp-button>
+            </div>
+        </form>
+    </div>
+</div>
+@await Component.InvokeAsync("GoogleReCaptcha")

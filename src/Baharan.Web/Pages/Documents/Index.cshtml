@@ -1,0 +1,33 @@
+﻿@page
+@using Baharan.Localization;
+@using Baharan.Permissions;
+@using Microsoft.AspNetCore.Authorization;
+@using Microsoft.Extensions.Localization;
+@model Baharan.Web.Pages.Documents.IndexModel
+@inject IAuthorizationService AuthorizationService
+@inject IStringLocalizer<BaharanResource> L
+@section scripts
+    {
+    <abp-script src="/Pages/Documents/Index.js" />
+}
+<abp-card>
+    <abp-card-header>
+        <abp-row>
+            <abp-column size-md="_6">
+                <abp-card-title>@L["Documents"]</abp-card-title>
+            </abp-column>
+            <abp-column size-md="_6" class="text-end">
+                @if (await AuthorizationService.IsGrantedAsync(BaharanPermissions.Documents.Create))
+                {
+                    <abp-button id="NewDocumentButton"
+                                text="@L["New d"].Value"
+                                icon="plus"
+                                button-type="Primary" />
+                }
+            </abp-column>
+        </abp-row>
+    </abp-card-header>
+    <abp-card-body>
+        <abp-table striped-rows="true" id="DocumentsTable"></abp-table>
+    </abp-card-body>
+</abp-card>
